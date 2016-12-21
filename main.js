@@ -1,8 +1,12 @@
   var language = (navigator.userLanguage || navigator.language).toLowerCase();
   
   function is_weixin() {
-      var ua = navigator.userAgent.toLowerCase();
-      return ua.match(/MicroMessenger/i) == "micromessenger"; 
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        return true;
+    } else {
+        return false;
+    } 
   }
 
   function showContent (language){
