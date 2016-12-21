@@ -2,13 +2,13 @@
   
   if(language === 'zh-cn') {
     showContent('zh');
-    display('en');
+    hideContent('en');
     if(is_weixin()) {
       showTip('zh');
     }
   } else {
     showContent('en');
-    display('zh');
+    hideContent('zh');
     if(is_weixin()) {
       showTip('en');
     }
