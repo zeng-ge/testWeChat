@@ -2,7 +2,7 @@
   
   function is_weixin() {
       var ua = navigator.userAgent.toLowerCase();
-      return ua.match(/MicroMessenger/i) === "micromessenger"; 
+      return ua.match(/MicroMessenger/i) == "micromessenger"; 
   }
 
   function showContent (language){
