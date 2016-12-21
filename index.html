@@ -6,6 +6,7 @@
   <meta name="viewport" content="initial-scale=1, minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no">
   <style type="text/css">
     .content{
+      display: none;
       font-size: 14px;
       margin: 10px auto;
       width: 80%;
@@ -32,12 +33,14 @@
       color: #fff;
       padding: 10px; 
     }
-
   </style>
 
 </head>
 <body>
-  <div class="content">
+  <div id="zh-content" class="content">
+    我就是为了测试一下国际化。
+  </div>
+  <div id="en-content" class="content">
     <div class="download">
       <button class="download-button">Download</button>
     </div>
@@ -53,12 +56,21 @@
    <script type="text/javascript">
     function is_weixin() {
         var ua = navigator.userAgent.toLowerCase();
-        console.log(ua);
         if (ua.match(/MicroMessenger/i) == "micromessenger") {
             return true;
         } else {
             return false;
         }
+    }
+    var enContent = document.getElementById('en-content');
+    var zhContent = document.getElementById('zh-content');
+    var language = (navigator.browserLanguage || navigator.language).toLowerCase();
+    if(language === "zh-cn") {
+     enContent.style.display = 'none';
+     zhContent.style.display = 'flex'; 
+    } else{
+     enContent.style.display = 'flex';
+     zhContent.style.display = 'none';
     }
     if(is_weixin()){
       var weixinTip = document.getElementsByClassName('tip');
