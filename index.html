@@ -64,8 +64,12 @@
     }
     var enContent = document.getElementById('en-content');
     var zhContent = document.getElementById('zh-content');
-    var language = (navigator.browserLanguage || navigator.language).toLowerCase();
-    if(language === "zh-cn") {
+    var language = (navigator.browserLanguage || (navigator.languages)[0]).toLowerCase();
+    console.log(navigator);
+    console.log(navigator.languages);
+    console.log(navigator.languages);
+    console.log(language);
+    if(language.indexOf('zh') > -1) {
      enContent.style.display = 'none';
      zhContent.style.display = 'flex'; 
     } else{
