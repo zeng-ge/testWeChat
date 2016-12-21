@@ -65,6 +65,7 @@
     var enContent = document.getElementById('en-content');
     var zhContent = document.getElementById('zh-content');
     var language = (navigator.browserLanguage || navigator.language).toLowerCase();
+    console.log(language);
     if(language === "zh-cn") {
      enContent.style.display = 'none';
      zhContent.style.display = 'flex'; 
