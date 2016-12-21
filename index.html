@@ -4,81 +4,55 @@
   <meta charset="UTF-8">
   <title>APP下载页面</title>
   <meta name="viewport" content="initial-scale=1, minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no">
-  <style type="text/css">
-    .content{
-      display: none;
-      font-size: 14px;
-      margin: 10px auto;
-      width: 80%;
-      display: flex;
-      justify-content: space-around;
-    }
-    .download-button {
-      background: red;
-      border: solid 1px red;
-      color: #fff;
-      padding: 8px;
-    }
-    .information {
-      padding: 8px;
-    }
-    .tip{
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      padding: 10px; 
-    }
-  </style>
-
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-  <div id="zh-content" class="content">
-    我就是为了测试一下国际化。
-  </div>
-  <div id="en-content" class="content">
-    <div class="download">
-      <button class="download-button">Download</button>
+  <div id="zh-content" class="main-content">
+    <div class="content clearfix">
+      <div class="content-download">
+        <img class="iconAndroid" src="images/iconAndroid.png" />
+        <button class="download-button">点击下载</button>
+      </div>
+      <div class="content-information">
+        <span>Android</span> 下载
+        <ul class="details">
+          <li>app name : My PACD</li>
+          <li>OS required: Android 4.4+</li>
+          <li>Introduce: A mobile platform developed for employees of Public Affairs and Communications Depatments(PACDs).</li>
+        </ul>
+      </div>
     </div>
-    <div class="information">
-      app name : My PACD
+    <div id="zh-tip" class="tip">
+      <p>WeChat disable all downloads,</p>
+      <p>please click menu <span>here</span> and</p>
+      <p>Click " <span>Open with Brower</span> " to Download.</p>
+      <img class="iconArrow" src="images/iconArrow.png" />
+      <img class="iconClose" src="images/closeBtn2.png" onclick="closeTip('zh')" />
     </div>
   </div>
-  <div class="tip">
-    <p>WeChat disable all downloads,</p>
-    <p>please click menu here and</p>
-    <p>Click "Open with Brower" to Download.</p>
+  <div id="en-content" class="main-content">
+    <div class="content clearfix">
+      <div class="content-download">
+        <img class="iconAndroid" src="images/iconAndroid.png" />
+        <button class="download-button">Download</button>
+      </div>
+      <div class="content-information">
+        <span>Android</span> Download
+        <ul class="details">
+          <li>app name : My PACD</li>
+          <li>OS required: Android 4.4+</li>
+          <li>Introduce: A mobile platform developed for employees of Public Affairs and Communications Depatments(PACDs).</li>
+        </ul>
+      </div>
+    </div>
+    <div id="en-tip" class="tip">
+      <p>WeChat disable all downloads,</p>
+      <p>please click menu <span>here</span> and</p>
+      <p>Click " <span>Open with Brower</span> " to Download.</p>
+      <img class="iconArrow" src="images/iconArrow.png" />
+      <img class="iconClose" src="images/closeBtn2.png" onclick="closeTip('en')" />
+    </div>  
   </div>
-   <script type="text/javascript">
-    function is_weixin() {
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    var enContent = document.getElementById('en-content');
-    var zhContent = document.getElementById('zh-content');
-    var language = (navigator.browserLanguage || navigator.language).toLowerCase();
-    console.log(navigator);
-    console.log(navigator.language);
-    console.log(language);
-    if(language.indexOf('zh') > -1) {
-     enContent.style.display = 'none';
-     zhContent.style.display = 'flex'; 
-    } else{
-     enContent.style.display = 'flex';
-     zhContent.style.display = 'none';
-    }
-    if(is_weixin()){
-      var weixinTip = document.getElementsByClassName('tip');
-      weixinTip[0].style.display = 'block';
-    }
-  </script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
