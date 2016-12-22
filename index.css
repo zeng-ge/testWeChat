@@ -11,8 +11,8 @@ body {
       clear: both;
     }
     .content{
-      max-width: 300px;
-      margin: 50px auto;
+      min-width: 290px;
+      margin: 50px 30px;
       font-size: 14px;
     }
     .content-download {
